@@ -3,10 +3,11 @@ module "eks" {
   version = "19.19.1"
 
   cluster_name    = local.cluster_name
-  cluster_version = "1.28"
+  cluster_version = "1.29"
   create_cluster_security_group = false
   create_node_security_group   = false
   create_kms_key = false
+  enable_cluster_autoscaling = false
 
   vpc_id                         = module.vpc.vpc_id
   subnet_ids                     = module.vpc.private_subnets
