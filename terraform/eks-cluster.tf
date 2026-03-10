@@ -4,10 +4,15 @@ module "eks" {
 
   cluster_name    = local.cluster_name
   cluster_version = "1.28"
+  create_cluster_security_group = false
+  create_node_security_group   = false
+  create_kms_key = false
 
   vpc_id                         = module.vpc.vpc_id
   subnet_ids                     = module.vpc.private_subnets
   cluster_endpoint_public_access = true
+
+  cluster_encryption_config = {}
 
   eks_managed_node_group_defaults = {
     ami_type = "AL2_x86_64"
