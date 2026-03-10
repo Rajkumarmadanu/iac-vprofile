@@ -19,7 +19,7 @@ env:
   # s3 bucket for terraform state
   BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
   # AWS region for deployment
-  AWS_REGION: us-east-1
+  AWS_REGION: us-east-2
   EKS_CLUSTER: vprofile-eks
 
 jobs:
